@@ -1,12 +1,3 @@
-/* Console example
-
-   This example code is in the Public Domain (or CC0 licensed, at your option.)
-
-   Unless required by applicable law or agreed to in writing, this
-   software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-   CONDITIONS OF ANY KIND, either express or implied.
-*/
-
 #include <pthread.h>
 #include "esp_system.h"
 #include "esp_log.h"
@@ -36,6 +27,7 @@
 #include "lwip/dns.h"
 #include "esp_mac.h"
 #include <esp_netif.h>
+
 
 #if !IP_NAPT
 #error "IP_NAPT must be defined"
@@ -472,7 +464,7 @@ static void wifi_event_handler(void *arg, esp_event_base_t event_base,
                  .method = HTTP_METHOD_HEAD,
                  .disable_auto_redirect = true};
              esp_http_client_handle_t client = esp_http_client_init(&config);
-             
+
              esp_err_t err = esp_http_client_perform(client);
              if (err == ESP_OK)
              {
